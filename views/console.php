@@ -1,23 +1,4 @@
 <?php
-//
-// ZoneMinder web console file, $Date$, $Revision$
-// Copyright (C) 2001-2008 Philip Coombes
-//
-// This program is free software; you can redistribute it and/or
-// modify it under the terms of the GNU General Public License
-// as published by the Free Software Foundation; either version 2
-// of the License, or (at your option) any later version.
-//
-// This program is distributed in the hope that it will be useful,
-// but WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-// GNU General Public License for more details.
-//
-// You should have received a copy of the GNU General Public License
-// along with this program; if not, write to the Free Software
-// Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
-//
-
 require_once('includes/Server.php');
 $servers = Server::find_all();
 
@@ -194,7 +175,8 @@ $versionClass = (ZM_DYN_DB_VERSION&&(ZM_DYN_DB_VERSION!=ZM_VERSION))?'errorText'
 xhtmlHeaders( __FILE__, translate('Console') );
 ?>
 <body>
-  <div id="page">
+<div class="container">
+  <div id="page" class="row">
     <form name="monitorForm" method="get" action="<?php echo $_SERVER['PHP_SELF'] ?>">
     <input type="hidden" name="view" value="<?php echo $view ?>"/>
     <input type="hidden" name="action" value=""/>
@@ -246,7 +228,7 @@ else
 ?>&nbsp;<?php echo makePopupLink( '?view=bandwidth', 'zmBandwidth', 'bandwidth', $bwArray[$_COOKIE['zmBandwidth']], ($user && $user['MaxBandwidth'] != 'low' ) ) ?> <?php echo translate('BandwidthHead') ?></h3>
     </div>
     <div id="content">
-      <table id="consoleTable" cellspacing="0">
+      <table class="table table-striped" id="consoleTable" cellspacing="0">
         <thead>
           <tr>
             <th class="colName"><?php echo translate('Name') ?></th>
@@ -377,5 +359,7 @@ echo $Server->Name();
     </div>
     </form>
   </div>
+</div>
+
 </body>
 </html>

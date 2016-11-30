@@ -116,7 +116,7 @@ function exportEventDetail( $event, $exportFrames, $exportImages )
 <body>
   <div id="page">
     <div id="content">
-		<h2><?php echo translate('Event') ?>: <?php echo validHtmlStr($event['Name']) ?><?php if(!empty($otherlinks)) { ?> (<?php echo$otherlinks?>) <?php } ?></h2>
+      <h2><?php echo translate('Event') ?>: <?php echo validHtmlStr($event['Name']) ?><?php if(!empty($otherlinks)) { ?> (<?php echo$otherlinks?>) <?php } ?></h2>
       <table id="eventDetail">
         <tr><th scope="row"><?php echo translate('Id') ?></th><td><?php echo $event['Id'] ?></td></tr>
         <tr><th scope="row"><?php echo translate('Name') ?></th><td><?php echo validHtmlStr($event['Name']) ?></td></tr>

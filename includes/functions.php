@@ -42,8 +42,7 @@ function xhtmlHeaders( $file, $title )
   <title><?php echo ZM_WEB_TITLE_PREFIX ?> - <?php echo validHtmlStr($title) ?></title>
   <link rel="icon" type="image/ico" href="graphics/favicon.ico"/>
   <link rel="shortcut icon" href="graphics/favicon.ico"/>
-  <link rel="stylesheet" href="css/reset.css" type="text/css"/>
-  <link rel="stylesheet" href="css/overlay.css" type="text/css"/>
+  <link rel="stylesheet" href="skins/bootstrap/bower_components/bootstrap-css/css/bootstrap.min.css" type="text/css"/>
   <link rel="stylesheet" href="<?php echo $skinCssFile ?>" type="text/css" media="screen"/>
 <?php
     if ( $viewCssFile )
@@ -104,14 +103,9 @@ function xhtmlHeaders( $file, $title )
   <script type="text/javascript" src="<?php echo $cssJsFile ?>"></script>
 <?php } ?>
   <script type="text/javascript" src="<?php echo $skinJsFile ?>"></script>
-<?php
-    if ( $viewJsFile )
-    {
-?>
-  <script type="text/javascript" src="<?php echo $viewJsFile ?>"></script>
-<?php
-    }
-?>
+
+<?php if ( $viewJsFile ): ?><script type="text/javascript" src="<?php echo $viewJsFile ?>"></script><?php endif; ?>
+
 </head>
 <?php
 }
